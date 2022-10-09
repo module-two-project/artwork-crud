@@ -57,16 +57,19 @@ router.get("/artwork/:artworkId", (req, res, next) => {
 
 
 
+
+
+
+
+
 //Update Artwork Info 
-router.get("/artwork/:artworkID/update", (req,res,next)=> {
-    Artwork.findById(req.params.artworkID)
-    .then((artworkDetails) =>{
-        res.render("artwork/artwork-update", artworkDetails);
-    })
-    .catch(err =>{
-        console.log("Error getting book details from DB...", err)
-        next();
-    })
+router.get("/artwork/:artworkId/update", (req, res, next)=>{
+  Artwork.findById(req.params.artworkId)
+  .then((artworkDetails) => {
+    res.render("artwork/artwork-update", artworkDetails);
+  })
+  .catch(err => console.log(err))
+  next()
 })
 
 router.post("/artwork/:artworkId/update", (req, res, next)=> {
@@ -81,6 +84,16 @@ router.post("/artwork/:artworkId/update", (req, res, next)=> {
   .then(()=> {res.redirect(`/artwork/${artworkId}`)})
   .catch(err => console.log(err))
   next()
+})
+
+
+router.post("/artwork/:artworkId/delete", (req,res,next)=>{
+  Artwork.findByIdAndDelete(req.params.artworkId)
+  .then(()=>{
+    res.redirect("/artwork")
+  })
+  .catch(err=>(console.log(err)))
+  next();
 })
 
 
