@@ -20,7 +20,7 @@ router.post("/artwork/create", (req, res, next) => {
 
     Artwork.create(artworkDetails)
         .then((artworkDetails) => {
-            res.redirect("/");
+            res.redirect("/artwork");
         })
         .catch((err) => {
             console.log("error creating new artwork in DB", err);
@@ -50,7 +50,6 @@ router.get("/artwork/:artworkId", (req, res, next) => {
             res.render("artwork/artwork-details", artworkDetails);
         })
         .catch(err => {
-            console.log(err);
             next();
         })
 });
@@ -95,8 +94,9 @@ router.post("/artwork/:artworkId/delete", (req, res, next) => {
         .then(() => {
             res.redirect("/artwork");
         })
-        .catch(err => (console.log(err)))
-    next();
+        .catch(err => {
+            next();
+        })
 })
 
 
