@@ -1,0 +1,15 @@
+<h1>Artworks in our DB:</h1>
+
+{{#each artwork}}
+    <section>
+        <h2>{{this.title}}</h2>
+        <p>
+            Artist: {{this.artist}}
+            Date: {{this.date}} 
+            Description: {{this.description}} 
+            <a href="/artwork/{{_id}}">More details</a> |
+            <a href="/artwork/create"> Create </a>
+        </p>
+
+    </section>
+{{/each}}

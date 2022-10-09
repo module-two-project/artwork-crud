@@ -1,0 +1,21 @@
+<h2>Update the artwork: {{title}}</h2>
+
+<form action="/artwork/{{_id}}/update" method="post">
+  <label> Title:
+    <input type="text" name="title" value="{{title}}" />
+  </label>
+
+  <label> Description:
+    <textarea name="description" value="{{description}}"> </textarea> 
+  </label>
+
+  <label> Date
+    <input name="date" type="date" value="{{date}}"/>
+  </label>
+
+  <label> Artist
+    <input type="text" name="artist" value="{{artist}}" />
+  </label>
+
+  <button>Save changes</button>
+</form>
