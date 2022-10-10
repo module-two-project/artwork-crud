@@ -1,5 +1,6 @@
 body {
-  padding: 50px;
+  /* padding: 50px; */
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -9,4 +10,20 @@ a {
 
 h1 {
   color: 15px;
+}
+
+nav{
+  background-color: aliceblue;
+}
+
+nav li{
+  list-style-type: none;
+  display: inline;
+  padding: 15px;
+  font-size: 20px;
+}
+
+#flex-container{
+  display: flex;
+  justify-content: flex-end;
 }

@@ -19,9 +19,9 @@ const app = express();
 require("./config")(app);
 
 const capitalized = require("./utils/capitalized");
-const projectName = "project2";
+const projectName = "Artwork Gallery";
 
-app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
+app.locals.appTitle = `${capitalized(projectName)} created by Marc & Saskia`;
 
 // 👇 Start handling routes here
 const index = require("./routes/index.routes");
