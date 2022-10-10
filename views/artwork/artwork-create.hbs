@@ -1,4 +1,8 @@
-<h2>Create an Artwork</h2>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" href="/stylesheets/style.css" />
+
+{{!-- <h2>Create an Artwork</h2>
 
 <form action="/artwork/create" method="post">
 
@@ -11,14 +15,48 @@
   </label>
 
   <label> Description:
-    <textarea name="description" rows="4" cols="50" ></textarea>
+    <textarea name="description" rows="4" cols="50"></textarea>
   </label>
 
-   <label> Artists:
+  <label> Artists:
     <input type="text" name="artist" />
   </label>
 
 
 
-  <button type="submit"> Create </button>
-</form>
+  <button type="submit"> Create </button> --}}
+
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-6">
+          <h1 class="title is-size-1">Submit Your Artwork</h1>
+          <form action="/artwork/create" method="POST">
+           
+            <label class="label" for="">Title</label>
+            <div class="control pb-4">
+              <input class="input" type="text" name="name" value="">
+              <p class="date">Name Your Piece</p>
+            </div>
+
+          {{!-- input date picker bootstrap --}}
+
+            <label class="label" for="">Description</label>
+            <div class="control pb-4">
+              <input class="input" type="text" name="dishName" value="">
+            </div>
+
+            <label class="label" for="">Artist</label>
+            <div class="control pb-4">
+              <input class="input" type="text" name="drinkName" value="">
+              <p class="help">Who made this piece?</p>
+            </div>
+           
+                <button type="submit" class="btn btn-primary">Submit</button> | <button type="submit" class="btn btn-primary">Cancel</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
