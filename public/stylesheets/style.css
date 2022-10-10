@@ -56,3 +56,47 @@ nav li{
   padding: 2%;
   text-align: center;
 }
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  background-color: #8FCB9B;
+  width: 400px;
+  height: 400px;
+  border-radius: 20px;
+  align-items: center;
+  color: #12130F;
+  
+}
+
+.login-form button{
+  margin: 20px;
+  height: 60px;
+  border-radius: 15px;
+}
+
+.login-form label{
+text-align: center;
+margin: 10px;
+}
+
+.login-form input{
+  height: 30px;
+  width: 200px;
+  }
+
+.full-body-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  height: 80vh;
+}
+
+.labels-div{
+  display: flex;
+  flex-direction: column;
+  padding: auto;
+  margin: auto;
+  height: auto;
+}
