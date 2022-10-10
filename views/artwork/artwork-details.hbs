@@ -1,4 +1,4 @@
-<section>
+{{!-- <section>
     <h2>{{title}}</h2>
 
     <p>
@@ -14,11 +14,30 @@
     </p>
 
     <p>
-        <form action="/artwork/{{_id}}/delete" method="POST">
-            <button>Delete</button>
-        </form>
-    </p>
+    <form action="/artwork/{{_id}}/delete" method="POST">
+        <button>Delete</button>
+    </form>
+    </p> --}}
 
-</section>
-<a href="/artwork/{{_id}}/update">Update</a> |
-<a href="/artwork">Back</a>
+    <section class="section-recipe-details row justify-content-center col-lg-6">
+        <div class="row justify-content-center col-lg-6">
+            <h2>{{title}}</h2>
+
+            <p>
+                <strong>Artist:</strong> <br />
+                {{artist}} <br />
+            </p>
+            <p>
+                <strong>Date: </strong> {{date}} <br />
+            </p>
+            <p>
+                <strong>Description:</strong>
+                {{description}}
+            </p>
+
+            <p>
+            <form action="/artwork/{{_id}}/delete" method="POST">
+                <button type="submit" class="btn btn-primary">Cancel</button>
+        </div>
+
+    </section>

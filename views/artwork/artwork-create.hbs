@@ -11,18 +11,22 @@
 
       <div class="row justify-content-left my-5">
 
-        <div class="col-lg-6">
+        <div class="col-lg-6 ">
           <form action="/artwork/create">
 
             <label for="" class="form-label">Title of Artwork:</label>
             <input type="text" class="form-control" id="title">
 
-             <label for="" class="form-label">Description:</label>
+            <label for="" class="form-label mt-3">Artist:</label>
             <input type="text" class="form-control" id="title">
 
-             <label for="" class="form-label">Artist:</label>
-            <input type="text" class="form-control" id="title">
-
+             
+             <div class="form-floating mb-4 mt-3">
+                <textarea name="descprition" id="" class="form-control" style="height: 140px"></textarea>
+                <label for="description">Description:</label>
+             </div>
+          
+            {{!-- i need to add the datepicker from bootstrap --}}
             
           </form>
         </div>
