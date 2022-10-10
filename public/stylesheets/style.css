@@ -71,13 +71,9 @@ li a{
   flex-wrap: nowrap;
   padding: 2%;
   text-align: center;
-<<<<<<< HEAD
   border: 1px solid black;
   margin: 5px;
 }
-=======
-}
-
 .login-form{
   display: flex;
   flex-direction: column;
@@ -120,4 +116,3 @@ margin: 10px;
   margin: auto;
   height: auto;
 }
->>>>>>> 25931a634a41a4f67f1e649a3b707835e374d3a0
