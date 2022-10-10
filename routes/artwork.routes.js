@@ -4,13 +4,14 @@ const Artwork = require("../models/Artwork.model");
 
 //CREATE: display form
 const router = require("express").Router();
-router.get("/artwork/create", (req, res, next) => {
+
+router.get("/artwork/create", isLoggedIn, (req, res, next) => {
     res.render("artwork/artwork-create");
 });
 
 // CREATE: post process form
 
-router.post("/artwork/create", (req, res, next) => {
+router.post("/artwork/create", isLoggedIn, (req, res, next) => {
     const artworkDetails = {
         title: req.body.title,
         description: req.body.description,
@@ -62,7 +63,7 @@ router.get("/artwork/:artworkId", (req, res, next) => {
 
 
 //Update Artwork Info 
-router.get("/artwork/:artworkID/update", (req,res,next)=> {
+router.get("/artwork/:artworkID/update", isLoggedIn, (req,res,next)=> {
     Artwork.findById(req.params.artworkID)
     .then((artworkDetails) =>{
         res.render("artwork/artwork-update", artworkDetails);
@@ -74,7 +75,7 @@ router.get("/artwork/:artworkID/update", (req,res,next)=> {
 })
 
 // update: post
-router.post("/artwork/:artworkId/update", (req, res, next) => {
+router.post("/artwork/:artworkId/update", isLoggedIn, (req, res, next) => {
     const artworkId = req.params.artworkId
     const newDetails = {
         title: req.body.title,
@@ -89,7 +90,7 @@ router.post("/artwork/:artworkId/update", (req, res, next) => {
 })
 
 // DELETE
-router.post("/artwork/:artworkId/delete", (req, res, next) => {
+router.post("/artwork/:artworkId/delete", isLoggedIn, (req, res, next) => {
     Artwork.findByIdAndDelete(req.params.artworkId)
         .then(() => {
             res.redirect("/artwork");
