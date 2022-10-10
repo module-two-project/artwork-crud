@@ -1,3 +1,11 @@
+/* colors: {
+  #5B9279 emerald, 
+  #8FCB9B lighter green,
+   #EAE6E5 platinum, 
+   #8F8073 ceramic, 
+   #12130F smoky black
+}, */
+
 body {
   /* padding: 50px; */
   margin: 0;
@@ -13,17 +21,38 @@ h1 {
 }
 
 nav{
-  background-color: aliceblue;
+  background-color: #5B9279;
+  padding-bottom: 10px;
+  padding-top: 0px;
 }
 
 nav li{
   list-style-type: none;
   display: inline;
-  padding: 15px;
+  padding: 12px;
   font-size: 20px;
 }
 
 #flex-container{
   display: flex;
   justify-content: flex-end;
+
+}
+
+.artwork-container{
+  display: flex;
+  justify-content: center;
+
+}
+
+.artwork-titles{
+  text-align: center;
+}
+
+.artwork-list{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 2%;
+  text-align: center;
 }
