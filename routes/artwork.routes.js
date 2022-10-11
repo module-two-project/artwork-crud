@@ -12,7 +12,7 @@ router.get("/artwork/create", isLoggedIn, (req, res, next) => {
 
 // CREATE: post process form
 
-router.post("/artwork/create", isLoggedIn, (req, res, next) => {
+router.post("/artwork/create", isLoggedIn, fileUploader.single('artworkPictureUrl'), (req, res, next) => {
     const artworkDetails = {
         title: req.body.title,
         description: req.body.description,
@@ -20,7 +20,7 @@ router.post("/artwork/create", isLoggedIn, (req, res, next) => {
         date: req.body.date,
     };
 
-    Artwork.create(artworkDetails)
+    Artwork.create(artworkDetails, {imageUrl: req.file.path})
         .then((artworkDetails) => {
             res.redirect("/artwork");
         })
@@ -29,6 +29,7 @@ router.post("/artwork/create", isLoggedIn, (req, res, next) => {
             next(err);
         });
 });
+
 
 //View all artwork
 
