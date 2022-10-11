@@ -52,6 +52,7 @@ router.get("/artwork/:artworkId", (req, res, next) => {
     Artwork.findById(artworkId)
         .then(artworkDetails => {
             res.render("artwork/artwork-details", artworkDetails);
+            console.log(req.session.user)
         })
         .catch(err => {
             next();

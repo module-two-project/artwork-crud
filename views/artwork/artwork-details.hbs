@@ -34,12 +34,19 @@
                 <strong>Description:</strong>
                 {{description}}
             </p>
+            <p>
+                <strong>Added By:</strong>
+                {{userInSession.username}}
+            </p>
             <div class="artwork-image-details">
                 <img src="{{artworkPictureUrl}}" class="card-img-top" alt="{{this.title}}" height="500px" width="auto">
             </div>
             <p>
+                
             <form action="/artwork/{{_id}}/delete" method="POST">
-                <button type="submit" class="btn btn-primary">Cancel</button>
+                <button type="submit" class="btn btn-primary">Delete This Artwork</button>
+                </form>
+<a href="/artwork/{{_id}}/update">Update</a>
         </div>
 
     </section>
