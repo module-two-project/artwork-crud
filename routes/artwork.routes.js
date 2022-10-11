@@ -93,14 +93,24 @@ router.post("/artwork/:artworkId/update", isLoggedIn, (req, res, next) => {
 })
 
 // DELETE
-router.post("/artwork/:artworkId/delete", isLoggedIn, isCreator,(req, res, next) => {
-    Artwork.findByIdAndDelete(req.params.artworkId)
-        .then(() => {
-            res.redirect("/artwork");
-        })
-        .catch(err => {
-            next();
-        })
+router.post("/artwork/:artworkId/delete", isLoggedIn, (req, res, next) => {
+    Artwork.findById(req.params.artworkId)
+    .then((artworkFromDB) => {
+        console.log(req.session.user.username)
+        console.log(artworkFromDB.user)
+        if(artworkFromDB.user !== req.session.user.username){
+         return res.send('sorry only creator can delete')
+        } else {
+            Artwork.findByIdAndDelete(req.params.artworkId)
+            .then(() => {
+                res.redirect("/artwork");
+            })
+            .catch(err => {
+                next();
+            })
+        }
+    })
+
 })
 
 
