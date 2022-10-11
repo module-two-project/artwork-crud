@@ -15,9 +15,18 @@
         <li>|</li>
         <li><a href="/artwork/create"> Create a new piece of artwork </a></li>
         <li>|</li>
-        <li><a href="/auth/signup"> Signup</a></li>
-        <li>|</li>
-        <li><a href="/auth/login">Login</a></li>
+  
+          <p>
+         {{#if req.session.user}}
+            <form id="logout" action="/logout" method="POST">
+               <button>Logout</button>
+            </form>
+         {{else}}
+            <a href="/auth/signup">Signup</a> |
+            <a href="/auth/login">Login</a> |
+         {{/if}}
+      </p>
+   </header>
       </ul>
   </nav>
 

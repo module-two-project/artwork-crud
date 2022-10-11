@@ -1,6 +1,7 @@
 const isLoggedIn = require("../middleware/isLoggedIn");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const Artwork = require("../models/Artwork.model");
+const fileUploader = require("../config/cloudinary");
 
 const router = require("express").Router();
 

@@ -6,10 +6,7 @@ const artWorkSchema = new Schema (
         date: Date,
         description: String,
         artist: String,
-        image: {
-            data: Buffer,
-            contentType: String,
-        }
+        bookPictureUrl: String,
     },
     {
         timestamps: true

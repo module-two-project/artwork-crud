@@ -15,17 +15,6 @@ const hbs = require("hbs");
 
 const app = express();
 
-const multer = require('multer')
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads')
-    },
-    filename: (req, file, cb) => {
-        cb(null, file.fieldname + '-' + Date.now())
-    }
-});
-  
-var upload = multer({ storage: storage });
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
