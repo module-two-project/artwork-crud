@@ -12,28 +12,30 @@
       <div class="row justify-content-left my-5">
 
         <div class="col-lg-6 ">
-          <form action="/artwork/create">
+          <form action="/artwork/create" method="POST">
 
             <label for="" class="form-label">Title of Artwork:</label>
-            <input type="text" class="form-control" id="title">
+            <input type="text" class="form-control" id="title" name="title">
 
             <label for="" class="form-label mt-3">Artist:</label>
-            <input type="text" class="form-control" id="title">
+            <input type="text" class="form-control" id="title" name="artist">
 
              
              <div class="form-floating mb-4 mt-3">
-                <textarea name="descprition" id="" class="form-control" style="height: 140px"></textarea>
+                <textarea id="" class="form-control" style="height: 140px" name="description"></textarea>
                 <label for="description">Description:</label>
              </div>
+
+             <label for="image" class="form-label mt-3"> Upload your artwork </label>
+              <input type="file" name="image">
           
             {{!-- i need to add the datepicker from bootstrap --}}
-            
-          </form>
-        </div>
-      </div>
-      <div class="row justify-content-center col-lg-6">
+            <div class="row justify-content-center col-lg-6">
          <button type="submit" class="btn btn-primary">Submit</button> | 
          <button type="submit"class="btn btn-primary">Cancel</button>
+      </div>
+          </form>
+        </div>
       </div>
     </div>
 </section>

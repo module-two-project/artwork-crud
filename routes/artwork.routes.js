@@ -2,9 +2,9 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const Artwork = require("../models/Artwork.model");
 
-//CREATE: display form
 const router = require("express").Router();
 
+//CREATE: display form
 router.get("/artwork/create", isLoggedIn, (req, res, next) => {
     res.render("artwork/artwork-create");
 });
@@ -54,11 +54,6 @@ router.get("/artwork/:artworkId", (req, res, next) => {
             next();
         })
 });
-
-
-
-
-
 
 
 

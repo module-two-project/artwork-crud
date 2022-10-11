@@ -6,6 +6,10 @@ const artWorkSchema = new Schema (
         date: Date,
         description: String,
         artist: String,
+        image: {
+            data: Buffer,
+            contentType: String,
+        }
     },
     {
         timestamps: true
