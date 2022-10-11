@@ -18,9 +18,10 @@ router.post("/artwork/create", isLoggedIn, fileUploader.single('artworkPictureUr
         description: req.body.description,
         artist: req.body.artist,
         date: req.body.date,
+        artworkPictureUrl: req.file.path
     };
 
-    Artwork.create(artworkDetails, {imageUrl: req.file.path})
+    Artwork.create(artworkDetails)
         .then((artworkDetails) => {
             res.redirect("/artwork");
         })

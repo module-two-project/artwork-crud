@@ -34,7 +34,9 @@
                 <strong>Description:</strong>
                 {{description}}
             </p>
-                <img src="{{imageUrl}}" class="card-img-top" alt="{{title}}">
+            <div class="artwork-image-details">
+                <img src="{{artworkPictureUrl}}" class="card-img-top" alt="{{this.title}}" height="500px" width="auto">
+            </div>
             <p>
             <form action="/artwork/{{_id}}/delete" method="POST">
                 <button type="submit" class="btn btn-primary">Cancel</button>

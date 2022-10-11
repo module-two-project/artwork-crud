@@ -6,7 +6,7 @@ const artWorkSchema = new Schema (
         date: Date,
         description: String,
         artist: String,
-        bookPictureUrl: String,
+        artworkPictureUrl: String,
     },
     {
         timestamps: true

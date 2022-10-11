@@ -1,36 +1,38 @@
 <h1 class="artwork-titles">Artworks in our DB:</h1>
 
 {{!-- <div class="artwork-container">
-{{#each artwork}}
+    {{#each artwork}}
     <section class="artwork-list">
         <h2>{{this.title}}</h2>
-        
-            Artist: {{this.artist}}
-            {{!-- Date: {{this.date}} 
-            Description: {{this.description}}  --}}
-            {{!-- <a href="/artwork/{{_id}}">More details</a> 
 
-            <a href="/artwork/{{_id}}/update">Update this artwork</a>  --}}
-        
+        Artist: {{this.artist}}
+        {{!-- Date: {{this.date}}
+        Description: {{this.description}} --}}
+        {{!-- <a href="/artwork/{{_id}}">More details</a>
 
-    {{!-- </section>
-{{/each}} --}}
-{{!-- </div> --}}
+        <a href="/artwork/{{_id}}/update">Update this artwork</a> --}}
 
-<section class="product col-12 cards" >
+
+        {{!--
+    </section>
+    {{/each}} --}}
+    {{!--
+</div> --}}
+
+<section class="product col-12 cards">
     <div class="row">
-{{#each artwork}}      
-                <div class="card col-12 col-md-3 m-3">
-                    {{!-- <img src="" class="card-img-top" alt="jacket"> --}}
-                    <div class="card-body">
-                        <img src="{{imageUrl}}" class="card-img-top" alt="{{title}}">
-                        <h5 class="card-title">{{this.title}}</h5>
-                        <p class="card-text">{{this.description}}</p>
-                        <a href="/artwork/{{_id}}" class="btn btn-primary">More Details</a>
-                    </div>
-                </div>
-{{/each}}
-</div>
+        {{#each artwork}}
+        <div class="card col-12 col-md-3 m-3">
+            {{!-- <img src="" class="card-img-top" alt="jacket"> --}}
+            <div class="card-body">
+                <img src="{{this.artworkPictureUrl}}" class="card-img-top" alt="{{title}}" height="300px" width="300px">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">{{this.description}}</p>
+                <a href="/artwork/{{_id}}" class="btn btn-primary">More Details</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
 </section>
 
 
