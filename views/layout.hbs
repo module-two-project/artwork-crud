@@ -17,12 +17,16 @@
         <li><a href="/artwork/create"> Create a new piece of artwork </a></li>
         </div>
         <div class="signup-login-links">
-         {{#if req.session.user}}
+         {{#if userInSession}}
+<form id="logout-form" action="/auth/logout" method="POST">
+       <li><button type="submit">Logout</button></li> 
+    </form>
+{{else}}
         <li><a href="/auth/signup">Signup</a></li>
         <li>|</li>
         <li><a href="/auth/login">Login</a> </li>
-         {{else}}
-         <li><a href="/auth/logout">Logout</a> </li>
+         
+         
          {{/if}}
         </div>
         </ul>

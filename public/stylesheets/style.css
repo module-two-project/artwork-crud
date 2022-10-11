@@ -39,6 +39,13 @@ nav li{
   color: #EAE6E5;
 }
 
+nav button{
+  background: none!important;
+  color: #EAE6E5;
+  font-family: 'Playfair Display', serif;
+  border: none;
+}
+
 li a{
   text-decoration: none;
   color: #EAE6E5;

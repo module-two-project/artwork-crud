@@ -153,4 +153,12 @@ router.get("/logout", isLoggedIn, (req, res) => {
   });
 });
 
+router.post('/logout', isLoggedIn, (req, res, next) => {
+  //req.session.destroy requires a callback to happen after it's been destroyed
+  req.session.destroy(err => {
+      if (err) {next(err)}; //if there is an error, call the next middleware function
+      res.redirect('/');
+  });
+});
+
 module.exports = router;

@@ -24,6 +24,11 @@ const projectName = "Artwork Gallery";
 
 app.locals.appTitle = `${capitalized(projectName)} created by Marc & Saskia`;
 
+app.use((req,res,next) => {
+    res.locals.userInSession = req.session.user
+    next()
+})
+
 // 👇 Start handling routes here
 const index = require("./routes/index.routes");
 app.use("/", index);
