@@ -7,8 +7,8 @@ const artWorkSchema = new Schema (
             required: true,
         },
         date: {
-            type: String,
-            //required: true,
+            type: Date,
+            
         },
         description: {
             type: String,
