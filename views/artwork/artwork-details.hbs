@@ -19,34 +19,35 @@
     </form>
     </p> --}}
 
-    <section class="section-recipe-details row justify-content-center col-lg-6">
-        <div class="row justify-content-center col-lg-6">
+    <section class="flex-container-artwork-details">
+        <div class="artwork-details-text">
             <h2>{{title}}</h2>
+    
+               <p> <strong>Artist:</strong> 
+                {{artist}} </p>
 
-            <p>
-                <strong>Artist:</strong> <br />
-                {{artist}} <br />
-            </p>
-            <p>
-                <strong>Date: </strong> {{date}} <br />
-            </p>
-            <p>
-                <strong>Description:</strong>
-                {{description}}
-            </p>
-            <p>
-                <strong>Added By:</strong>
-                {{this.user}}
-            </p>
-            <div class="artwork-image-details">
-                <img src="{{artworkPictureUrl}}" class="card-img-top" alt="{{this.title}}" height="500px" width="auto">
-            </div>
-            <p>
-                
+
+                <p><strong>Date: </strong> {{date}} </p>
+
+
+               <p><strong>Description:</strong>
+                {{description}}</p>
+
+
+                <p><strong>Added By:</strong>
+                {{this.user}}</p>
+
+    
             <form action="/artwork/{{_id}}/delete" method="POST">
                 <button type="submit" class="btn btn-primary">Delete This Artwork</button>
-                </form>
-<a href="/artwork/{{_id}}/update">Update</a>
+            </form>
+
+            <a href="/artwork/{{_id}}/update">Update</a>
+
+        </div>
+
+        <div class="artwork-image-details">
+            <img src="{{artworkPictureUrl}}" alt="{{this.title}}" height="400px" width="auto">
         </div>
 
     </section>

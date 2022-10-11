@@ -156,4 +156,15 @@ display: flex;
   font-size: 30px;
 }
 
+.flex-container-artwork-details{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+
+.artwork-image-details{
+  display: flex;
+  justify-content: flex-end;
+}
 
