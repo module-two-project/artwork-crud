@@ -33,11 +33,10 @@ nav{
 nav li{
   list-style-type: none;
   display: flex;
-  /* padding: 12px; */
+  padding: 0 5px;
   font-size: 20px;
   text-decoration: none;
   color: #EAE6E5;
-  border: 1px solid black;
 }
 
 li a{
@@ -49,10 +48,22 @@ li a{
 
 .flex-container{
   display: flex;
-  justify-content: center;
   align-content: center;
-  border: 1px solid black;
+justify-content: space-between;
+  margin-bottom: 0;
+  padding: 1rem;
+
 }
+
+.view-create-links{
+display: flex;
+}
+
+.signup-login-links{
+  display: flex;
+}
+
+
 
 .artwork-container{
   display: flex;
