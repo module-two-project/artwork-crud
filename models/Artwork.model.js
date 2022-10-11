@@ -2,11 +2,26 @@ const { Schema, model } = require('mongoose');
 
 const artWorkSchema = new Schema (
     {
-        title: String,
-        date: Date,
-        description: String,
-        artist: String,
-        artworkPictureUrl: String,
+        title: {
+            type: String,
+            required: true,
+        },
+        date: {
+            type: String,
+            //required: true,
+        },
+        description: {
+            type: String,
+            required: true,
+        },
+        artist: {
+            type: String,
+            required: true,
+        },
+        artworkPictureUrl: {
+            type: String,
+            required: true,
+        }
     },
     {
         timestamps: true
