@@ -20,6 +20,8 @@
           <label for="" class="form-label mt-3">Artist:</label>
           <input type="text" class="form-control" id="title" name="artist">
 
+          <label for="" class="form-label mt-3">Date</label>
+          <input type="date" class="form-control" id="" name="date">
 
           <div class="form-floating mb-4 mt-3">
             <textarea id="" class="form-control" style="height: 140px" name="description"></textarea>
@@ -27,13 +29,13 @@
           </div>
 
           <label class="myLabel" for="artworkPictureUrl">
-            <input type="file" name="artworkPictureUrl" id="artworkPictureUrl" placeholder="Add artwork cover" required />
+            <input type="file" name="artworkPictureUrl" id="artworkPictureUrl" placeholder="Add artwork cover"
+              required />
             <span>
               Upload Artwork
             </span>
           </label>
-
-          {{!-- i need to add the datepicker from bootstrap --}}
+          
           <div class="row justify-content-center col-lg-6">
             <button type="submit" class="btn btn-primary">Submit</button> |
             <button type="submit" class="btn btn-primary">Cancel</button>
