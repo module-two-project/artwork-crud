@@ -18,9 +18,11 @@ router.post("/artwork/create", isLoggedIn, fileUploader.single('artworkPictureUr
         description: req.body.description,
         artist: req.body.artist,
         date: req.body.date,
-        artworkPictureUrl: req.file.path
-    };
+        artworkPictureUrl: req.file.path,
+        user: req.user.username
 
+    };
+console.log(req.user.username)
     Artwork.create(artworkDetails)
         .then((artworkDetails) => {
             res.redirect("/artwork");
@@ -52,7 +54,7 @@ router.get("/artwork/:artworkId", (req, res, next) => {
     Artwork.findById(artworkId)
         .then(artworkDetails => {
             res.render("artwork/artwork-details", artworkDetails);
-            console.log(req.session.user)
+            //console.log(artworkDetails)
         })
         .catch(err => {
             next();

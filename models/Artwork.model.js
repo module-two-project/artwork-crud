@@ -21,7 +21,11 @@ const artWorkSchema = new Schema (
         artworkPictureUrl: {
             type: String,
             required: true,
+        },
+        user:{
+            type: String,
         }
+
     },
     {
         timestamps: true
