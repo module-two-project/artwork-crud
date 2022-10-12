@@ -200,7 +200,7 @@ font-family: 'Playfair Display', serif;
   margin: 10px 0;
 }
 
-#artwork-create-heading {
+.artwork-create-heading {
   text-align: center;
   font-weight: bolder;
   margin-top: 15px;
@@ -208,4 +208,8 @@ font-family: 'Playfair Display', serif;
 
 .card{
  background-color: #d8d0ae;
+}
+
+.artwork-update{
+  margin: 15px;
 }
