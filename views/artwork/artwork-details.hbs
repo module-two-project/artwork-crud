@@ -1,53 +1,37 @@
-{{!-- <section>
+<section class="flex-container-artwork-details">
+  <div class="artwork-details-text">
     <h2>{{title}}</h2>
 
     <p>
-        <strong>Artist:</strong> <br />
-        {{artist}} <br />
-    </p>
-    <p>
-        <strong>Date: </strong> {{date}} <br />
-    </p>
-    <p>
-        <strong>Description:</strong>
-        {{description}}
+      <strong>Artist:</strong>
+      {{artist}}
     </p>
 
-    <p>
+    <p><strong>Date: </strong> {{date}} </p>
+
+    <p><strong>Description:</strong>
+      {{description}}</p>
+
+    <p><strong>Added By:</strong>
+      {{this.user}}</p>
+
+    <a href="/artwork/{{_id}}/update" class="btn btn-primary">
+      Update This Artwork</a>
+
     <form action="/artwork/{{_id}}/delete" method="POST">
-        <button>Delete</button>
+      <button type="submit" class="btn btn-primary">Delete This Artwork</button>
     </form>
-    </p> --}}
 
-    <section class="flex-container-artwork-details">
-        <div class="artwork-details-text">
-            <h2>{{title}}</h2>
-    
-               <p> <strong>Artist:</strong> 
-                {{artist}} </p>
+  </div>
 
+  <div class="artwork-image-details">
+    <img
+      src="{{artworkPictureUrl}}"
+      alt="{{this.title}}"
+      class="artwork-image"
+      height="400px"
+      width="auto"
+    />
+  </div>
 
-                <p><strong>Date: </strong> {{date}} </p>
-
-
-               <p><strong>Description:</strong>
-                {{description}}</p>
-
-
-                <p><strong>Added By:</strong>
-                {{this.user}}</p>
-
-    
-            <form action="/artwork/{{_id}}/delete" method="POST">
-                <button type="submit" class="btn btn-primary">Delete This Artwork</button>
-            </form>
-
-            <a href="/artwork/{{_id}}/update">Update</a>
-
-        </div>
-
-        <div class="artwork-image-details">
-            <img src="{{artworkPictureUrl}}" alt="{{this.title}}" class="artwork-image" height="400px" width="auto">
-        </div>
-
-    </section>
+</section>

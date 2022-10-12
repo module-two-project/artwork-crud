@@ -78,18 +78,22 @@ router.get("/artwork/:artworkID/update", isLoggedIn, (req,res,next)=> {
 })
 
 // update: post
-router.post("/artwork/:artworkId/update", isLoggedIn, (req, res, next) => {
+router.post("/artwork/:artworkId/update", isLoggedIn, fileUploader.single('artworkPictureUrl'), (req, res, next) => {
+    console.log(req.body.artworkPictureUrl)
     const artworkId = req.params.artworkId
     const newDetails = {
         title: req.body.title,
         date: req.body.date,
         description: req.body.description,
-        artist: req.body.artist
+        artist: req.body.artist,
+        artworkPictureUrl: req.file.path,
+        user: req.user.username
+
     }
     Artwork.findByIdAndUpdate(artworkId, newDetails)
-        .then(() => { res.redirect(`/artwork/${artworkId}`) })
+        .then(() => { return res.redirect(`/artwork/${artworkId}`) })
         .catch(err => console.log(err))
-    next()
+    //next()
 })
 
 // DELETE

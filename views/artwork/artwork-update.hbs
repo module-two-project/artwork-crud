@@ -1,21 +1,75 @@
 <h2>Update the artwork: {{title}}</h2>
 
-<form action="/artwork/{{_id}}/update" method="post">
-  <label> Title:
-    <input type="text" name="title" value="{{title}}" />
+<form action="/artwork/{{_id}}/update" method="POST" enctype="multipart/form-data">
+  <label> Title of Artwork: </label>
+  <input type="text" name="title" value="{{title}}" />
+
+
+  <label> Artist: </label>
+  <input type="text" name="artist" value="{{artist}}" />
+
+
+  <label> Date </label>
+  <input name="date" type="date" value="{{date}}" />
+
+
+  <label> Description: </label>
+  <textarea name="description"> {{description}} </textarea>
+
+  <label class="btn btn-primary create-button col-lg-12" for="artworkPictureUrl">
+    <input type="file" name="artworkPictureUrl" id="artworkPictureUrl" placeholder="Add artwork cover" required />
+    <span>
+      Add an Artwork Image
+    </span>
   </label>
 
-  <label> Date
-    <input name="date" type="date" value="{{date}}"/>
-  </label>
 
-  <label> Description:
-    <textarea name="description" > {{description}} </textarea> 
-  </label>
-
-  <label> Artist
-    <input type="text" name="artist" value="{{artist}}" />
-  </label>
-
-  <button>Save changes</button>
+  <button type="submit">Save changes</button>
 </form>
+
+////
+
+{{!-- <section class="create">
+  <div class="container-lg">
+      <h2 id="artwork-create-heading">Submit Your Artwork</h2>
+
+    <div class="row justify-content-center my-5">
+
+      <div class="col-lg-6 ">
+        <form action="/artwork/{{_id}}/update" method="POST" enctype="multipart/form-data">
+
+          <label for="" class="form-label">Title of Artwork:</label>
+          <input type="text" name="title" value="{{title}}" class="form-control"/>
+
+          <label for="" class="form-label mt-3">Artist:</label>
+          <input type="text" name="artist" value="{{artist}}" class="form-control"/>
+
+          <label for="" class="form-label mt-3">Date</label>
+          <input name="date" type="date" value="{{date}}"class="form-control"/>
+
+          <div class="form-floating mb-4 mt-3">
+            <textarea class="form-control" style="height: 100px" name="description" > {{description}} </textarea> 
+            <label for="description">Description:</label>
+          </div>
+
+         
+           <div class="row justify-content-center my-5">
+          <div class="row justify-content-center col-lg-8">
+
+             <label class="btn btn-primary create-button col-lg-12" for="artworkPictureUrl">
+            <input type="file" name="artworkPictureUrl" id="artworkPictureUrl" placeholder="Add artwork cover"
+              required />
+            <span>
+              Add an Artwork Image
+            </span>
+          </label>
+            <button type="submit" class="btn btn-primary create-button" >Submit Updates</button> 
+            </div>
+            <br>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section> --}}
+
