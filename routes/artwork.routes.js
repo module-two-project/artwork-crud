@@ -3,6 +3,7 @@ const isLoggedOut = require("../middleware/isLoggedOut");
 const Artwork = require("../models/Artwork.model");
 const fileUploader = require("../config/cloudinary");
 const User = require("../models/User.model");
+const { findById } = require("../models/Artwork.model");
 
 
 const router = require("express").Router();
@@ -83,17 +84,22 @@ router.get("/artwork/:artworkID/update", isLoggedIn, (req,res,next)=> {
 
 // update: post
 router.post("/artwork/:artworkId/update", isLoggedIn, fileUploader.single('artworkPictureUrl'), (req, res, next) => {
-    console.log(req.body.artworkPictureUrl)
     const artworkId = req.params.artworkId
-    const newDetails = {
-        title: req.body.title,
-        date: req.body.date,
-        description: req.body.description,
-        artist: req.body.artist,
-        artworkPictureUrl: req.file.path,
-    }
+    const {title, description, artist, date} = req.body
+    let artworkPictureUrl
+    if(!req.file){
+Artwork.findById(artworkId)
+.then(foundArt=>{
+    artworkPictureUrl=foundArt.artworkPictureUrl
+    console.log('this is', foundArt)})
 
-    Artwork.findByIdAndUpdate(artworkId, newDetails)
+
+
+
+
+    } else {artworkPictureUrl = req.file.path}
+
+    Artwork.findByIdAndUpdate(artworkId, {title, description, artist, date, artworkPictureUrl: artworkPictureUrl})
         .then(() => { return res.redirect(`/artwork/${artworkId}`) })
         .catch(err => console.log(err))
     //next()
@@ -106,7 +112,7 @@ router.post("/artwork/:artworkId/delete", isLoggedIn, (req, res, next) => {
         console.log(req.session.user.username)
         console.log(artworkFromDB.user)
         if(artworkFromDB.user !== req.session.user.username){
-         return res.send('sorry only creator can delete')
+         res.render('artwork/artwork-deletion-err', {errorMessage: 'Sorry, art can only be deleted by the user who created it.'})
         } else {
             Artwork.findByIdAndDelete(req.params.artworkId)
             .then(() => {

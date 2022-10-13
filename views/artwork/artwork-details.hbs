@@ -22,16 +22,17 @@
 
     <form action="/artwork/{{_id}}/delete" method="POST">
       <button onclick="myFunction()" type="submit" class="btn btn-primary">Delete This Artwork</button>
-       <script>
-          function myFunction() {
-            alert("Artwork Deleted");
-          }
-        </script>
     </form>
 
 <form action="/artwork/{{_id}}/favourite" method="POST">
     <button name="favourite" type="submit" class="btn btn-primary create-button col-lg-8">Show This On My Profile</button>
 </form>
+
+   {{#if errorMessage}}
+      <p class="error-message"> Error: {{errorMessage}} </p>
+      {{/if}}
+
+
 {{else}}
 <a class="btn btn-primary" href="/artwork"> Go Back </a>
 

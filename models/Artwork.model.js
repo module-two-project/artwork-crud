@@ -20,7 +20,7 @@ const artWorkSchema = new Schema (
         },
         artworkPictureUrl: {
             type: String,
-            required: true,
+            //required: true,
         },
         user:{
             type: String,
