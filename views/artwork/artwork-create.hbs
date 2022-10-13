@@ -9,14 +9,18 @@
 
     <div class="row justify-content-center my-5">
 
+      {{#if errorMessage}}
+      <p class="error-message"> Error: {{errorMessage}} </p>
+      {{/if}}
+
       <div class="col-lg-6 ">
         <form action="/artwork/create" method="POST" enctype="multipart/form-data">
 
           <label for="" class="form-label">Title of Artwork:</label>
-          <input type="text" class="form-control" id="title" name="title">
+          <input type="text" class="form-control" id="title" name="title" placeholder="Add the name of your artwork">
 
           <label for="" class="form-label mt-3">Artist:</label>
-          <input type="text" class="form-control" id="title" name="artist">
+          <input type="text" class="form-control" id="title" name="artist" placeholder="Add the name of the artist">
 
           <label for="" class="form-label mt-3">Date Created</label>
           <input type="date" class="form-control" id="" name="date">
@@ -31,10 +35,9 @@
             <div class="row justify-content-center col-lg-8">
 
               <label class="btn btn-primary create-button col-lg-12" for="artworkPictureUrl">
-                <input type="file" name="artworkPictureUrl" id="artworkPictureUrl" placeholder="Add artwork cover"
-                  required />
+                <input type="file" name="artworkPictureUrl" id="artworkPictureUrl" placeholder="Add artwork cover" />
                 <span>
-                  Add an Artwork Image
+                  Artwork Image is Required
                 </span>
               </label>
               <button type="submit" class="btn btn-primary create-button">Submit</button>
