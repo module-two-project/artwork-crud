@@ -21,7 +21,12 @@
       Update This Artwork</a>
 
     <form action="/artwork/{{_id}}/delete" method="POST">
-      <button type="submit" class="btn btn-primary">Delete This Artwork</button>
+      <button onclick="myFunction()" type="submit" class="btn btn-primary">Delete This Artwork</button>
+       <script>
+          function myFunction() {
+            alert("Artwork Deleted");
+          }
+        </script>
     </form>
 
 <form action="/artwork/{{_id}}/favourite" method="POST">
