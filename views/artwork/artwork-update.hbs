@@ -1,46 +1,49 @@
-
-
 <h2 class="artwork-create-heading">Update the artwork: {{title}}</h2>
 
 
 
 <div class="row justify-content-center my-6 artwork-update">
-<div class="col-lg-6 ">
-<form action="/artwork/{{_id}}/update" method="POST" enctype="multipart/form-data">
-  <label> Title of Artwork: </label>
-  <input type="text" name="title" value="{{title}}" class="form-control"/>
+  <div class="col-lg-6 ">
+    <form action="/artwork/{{_id}}/update" method="POST" enctype="multipart/form-data">
+      <label> Title of Artwork: </label>
+      <input type="text" name="title" value="{{title}}" class="form-control" />
 
 
-  <label> Artist: </label>
-  <input type="text" name="artist" value="{{artist}}" class="form-control"/>
+      <label> Artist: </label>
+      <input type="text" name="artist" value="{{artist}}" class="form-control" />
 
 
-  <label> Date </label>
-  <input name="date" type="date" value="{{date}}" class="form-control"/>
+      <label> Date </label>
+      <input name="date" type="date" value="{{date}}" class="form-control" />
 
 
-  <label> Description: </label>
-  <textarea name="description" class="form-control"> {{description}} </textarea>
+      <label> Description: </label>
+      <textarea id="" class="form-control" style="height: 100px" name="description"> {{description}}</textarea>
+      <div class="row justify-content-center">
+        <label class="btn btn-primary create-button col-lg-8" for="artworkPictureUrl">
+          <input type="file" name="artworkPictureUrl" id="artworkPictureUrl" required />
+          <span>
+            Change Artwork Image
+          </span>
+        </label>
 
-<div class="row justify-content-center">
-  <label class="btn btn-primary create-button col-lg-8" for="artworkPictureUrl">
-    <input type="file" name="artworkPictureUrl" id="artworkPictureUrl" required />
-    <span>
-      Change Artwork Image
-    </span>
-  </label>
 
-
-  <button type="submit" class="btn btn-primary create-button col-lg-8">Save changes</button>
-</form>
-</div>
+        <button onclick="myFunction()" type="submit" class="btn btn-primary create-button col-lg-8">Save
+          changes</button>
+        <script>
+          function myFunction() {
+            alert("Changes Saved");
+          }
+        </script>
+    </form>
+  </div>
 </div>
 </div>
 
 
 {{!-- <section class="create">
   <div class="container-lg">
-      <h2 id="artwork-create-heading">Submit Your Artwork</h2>
+    <h2 id="artwork-create-heading">Submit Your Artwork</h2>
 
     <div class="row justify-content-center my-5">
 
@@ -48,31 +51,31 @@
         <form action="/artwork/{{_id}}/update" method="POST" enctype="multipart/form-data">
 
           <label for="" class="form-label">Title of Artwork:</label>
-          <input type="text" name="title" value="{{title}}" class="form-control"/>
+          <input type="text" name="title" value="{{title}}" class="form-control" />
 
           <label for="" class="form-label mt-3">Artist:</label>
-          <input type="text" name="artist" value="{{artist}}" class="form-control"/>
+          <input type="text" name="artist" value="{{artist}}" class="form-control" />
 
           <label for="" class="form-label mt-3">Date</label>
-          <input name="date" type="date" value="{{date}}"class="form-control"/>
+          <input name="date" type="date" value="{{date}}" class="form-control" />
 
           <div class="form-floating mb-4 mt-3">
-            <textarea class="form-control" style="height: 100px" name="description" > {{description}} </textarea> 
+            <textarea class="form-control" style="height: 100px" name="description"> {{description}} </textarea>
             <label for="description">Description:</label>
           </div>
 
-         
-           <div class="row justify-content-center my-5">
-          <div class="row justify-content-center col-lg-8">
 
-             <label class="btn btn-primary create-button col-lg-12" for="artworkPictureUrl">
-            <input type="file" name="artworkPictureUrl" id="artworkPictureUrl" placeholder="Add artwork cover"
-              required />
-            <span>
-              Add an Artwork Image
-            </span>
-          </label>
-            <button type="submit" class="btn btn-primary create-button" >Submit Updates</button> 
+          <div class="row justify-content-center my-5">
+            <div class="row justify-content-center col-lg-8">
+
+              <label class="btn btn-primary create-button col-lg-12" for="artworkPictureUrl">
+                <input type="file" name="artworkPictureUrl" id="artworkPictureUrl" placeholder="Add artwork cover"
+                  required />
+                <span>
+                  Add an Artwork Image
+                </span>
+              </label>
+              <button type="submit" class="btn btn-primary create-button">Submit Updates</button>
             </div>
             <br>
           </div>
@@ -81,4 +84,3 @@
     </div>
   </div>
 </section> --}}
-
