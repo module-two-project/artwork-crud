@@ -146,6 +146,7 @@ li a {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 80vh;
 }
 
@@ -243,4 +244,8 @@ h5{
 
 .favourite-art{
   border-radius: 15px;
+}
+
+.error-message{
+  margin: 20px;
 }

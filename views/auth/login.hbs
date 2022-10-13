@@ -2,13 +2,18 @@
   integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="/stylesheets/style.css" />
 
-
-
 <div class="full-body-login">
+
+{{#if errorMessage}}
+ <p class="error-message"> Error: {{errorMessage}} </p> 
+   {{/if}}
+
 <div class="login-form">
    <h2 class="logsign-title"> Log In </h2>
 <form action="/auth/login" method="POST">
 <div class="labels-div">
+
+
    <label> <p>Username</p>
       <br>
       <input type="text" name="username" autofocus="autofocus" placeholder="Enter your username">
@@ -22,7 +27,5 @@
 </div>
 </div>
 
-{{#if errorMessage}}
-   {{errorMessage}}
-{{/if}}
+
 
