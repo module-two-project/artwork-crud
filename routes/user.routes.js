@@ -13,6 +13,7 @@ const router = require("express").Router();
 router.get("/user/profile", isLoggedIn, (req, res) => {
     console.log(req.session.user._id)
       User.findById(req.session.user._id)
+      .populate('favouriteArt')
         .then((currentUser) => {
     res.render("users/profile", currentUser)
     console.log(currentUser)
@@ -32,7 +33,7 @@ router.post("/profile/edit", (req,res,next) => {
 const userDetails = {
 firstName: req.body.firstName,
 lastName: req.body.lastName,
-userCountry: req.body.userCountry
+userCountry: req.body.userCountry,
 };
 User.findByIdAndUpdate(req.session.user._id, userDetails)
 .then(() => { return res.redirect(`/user/profile`) })

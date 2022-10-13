@@ -1,12 +1,19 @@
+<container class="h-100">
+<div class="row h-100 justify-content-center align-items-center" >
+<div class="col-lg-6">
+<span class="align-text-bottom">
 <form action="/profile/edit" method="POST" id="userForm">
 
-<label for="" class="form-label"> First Name </label>
+<label for="" class="form-label"> First Name: </label>
 <input type="text" class="form-control" name="firstName">
 
-<label for="" class="form-label">Last Name</label>
+<label for="" class="form-label">Last Name: </label>
 <input type="text" class="form-control" name="lastName">
 
-<label for="" class="form-label">Country</label>
+<label for="" class="form-label">Faves: </label>
+<input type="text" class="form-control" name="favouriteArt">
+
+<label for="" class="form-label">Country: </label>
 <select class="form-control" name="userCountry" for="userForm">
     <option>select country</option>
     <option value="Afghanistan">Afghanistan</option>
@@ -255,5 +262,8 @@
                 <option value="Zimbabwe">Zimbabwe</option>
 </select>
 
-<button type="submit"> Save my info </button>
+<button type="submit" class="btn btn-primary create-button "> Save my info </button>
 </form>
+</div>
+</div>
+</container>

@@ -8,9 +8,13 @@ const userSchema = new Schema(
       unique: true 
     },
     password: String,
-    firstName: String,
-    lastName: String,
-    userCountry:String,
+    firstName: {type: String, default: "not set"},
+    lastName: {type: String, default: "not set"},
+    userCountry:{type: String, default: "not set"},
+    favouriteArt: [{
+      type: Schema.Types.ObjectId,
+      ref: "Artwork",
+    }, ],
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

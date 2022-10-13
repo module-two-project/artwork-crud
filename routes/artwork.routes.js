@@ -2,6 +2,7 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const Artwork = require("../models/Artwork.model");
 const fileUploader = require("../config/cloudinary");
+const User = require("../models/User.model");
 
 
 const router = require("express").Router();
@@ -116,6 +117,19 @@ router.post("/artwork/:artworkId/delete", isLoggedIn, (req, res, next) => {
     })
 
 })
+
+router.post("/artwork/:artworkId/favourite", isLoggedIn, (req,res, next)=> {
+    Artwork.findById(req.params.artworkId)
+    .then((artworkFromDB) => {
+       User.findOneAndUpdate({username: req.session.user.username}, {$push: {favouriteArt:artworkFromDB}})
+       .then(()=> {res.redirect("/user/profile")
+})
+            })
+            .catch(err => {
+                next();
+            })
+        })
+
 
 
 
