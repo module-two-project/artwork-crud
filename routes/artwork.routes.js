@@ -91,9 +91,8 @@ router.post("/artwork/:artworkId/update", isLoggedIn, fileUploader.single('artwo
         description: req.body.description,
         artist: req.body.artist,
         artworkPictureUrl: req.file.path,
-        user: req.user.username
-
     }
+
     Artwork.findByIdAndUpdate(artworkId, newDetails)
         .then(() => { return res.redirect(`/artwork/${artworkId}`) })
         .catch(err => console.log(err))
