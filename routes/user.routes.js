@@ -33,7 +33,9 @@ router.get("/user/profile", isLoggedIn, (req, res) => {
 
 router.get("/profile/edit", (req, res, next) => {
   User.findById(req.session.user._id)
-    .then((foundUser) => { res.render("users/profile-edit", {...foundUser, foundUser: foundUser.userCountry}) })
+    .then((foundUser) => { 
+      console.log(foundUser)
+      res.render("users/profile-edit", foundUser) })
     .catch(err => { console.log(err) })
 })
 

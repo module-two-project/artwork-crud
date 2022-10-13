@@ -6,7 +6,7 @@
                 <form action="/profile/edit" method="POST" id="userForm">
 
                     <label for="" class="form-label"> First Name: </label>
-                    <input type="text" class="form-control" name="firstName" value="{{firstName}}">
+                    <input type="text" class="form-control" name="firstName" value="{{this.firstName}}">
 
                     <label for="" class="form-label">Last Name: </label>
                     <input type="text" class="form-control" name="lastName" value="{{lastName}}">
@@ -22,8 +22,7 @@
                     </select><br /><br /> --}}
 
 
-
-{{#select foundUser}}
+{{#select countryDetails}}
 
                     <label for="" class="form-label"> Country: </label>
                     <select class="form-control" name="userCountry" for="userForm">
