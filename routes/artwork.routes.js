@@ -15,17 +15,20 @@ router.get("/artwork/create", isLoggedIn, (req, res, next) => {
 // CREATE: post process form
 
 router.post("/artwork/create", isLoggedIn, fileUploader.single('artworkPictureUrl'), (req, res, next) => {
-    const artworkDetails = {
-        title: req.body.title,
-        description: req.body.description,
-        artist: req.body.artist,
-        date: req.body.date,
-        artworkPictureUrl: req.file.path,
-        user: req.user.username
+    const {title,description,artist,date} = req.body;
+    if (!title || !description || !artist || !date || !req.file) {
+        return res
+        .status(400)
+        .render("artwork/artwork-create", { errorMessage: "Please fill in all fields."})
 
-    };
-console.log(req.user.username)
-    Artwork.create(artworkDetails)
+      }
+    const artworkPictureUrl=req.file.path;
+console.log(artworkPictureUrl)
+const user = req.user.username;
+
+      
+
+    Artwork.create({title,description,date,artist,artworkPictureUrl,user})
         .then((artworkDetails) => {
             res.redirect("/artwork");
         })
@@ -122,7 +125,8 @@ router.post("/artwork/:artworkId/favourite", isLoggedIn, (req,res, next)=> {
     Artwork.findById(req.params.artworkId)
     .then((artworkFromDB) => {
        User.findOneAndUpdate({username: req.session.user.username}, {$push: {favouriteArt:artworkFromDB}})
-       .then(()=> {res.redirect("/user/profile")
+       .then((result)=> {res.redirect("/user/profile")
+       console.log(result)
 })
             })
             .catch(err => {
