@@ -24,12 +24,18 @@ router.get("/user/profile", isLoggedIn, (req, res) => {
 
         
 
-        router.get("/profile/edit", (req,res,next) => {
-          User.findById(req.session.user._id)
-          .then((foundUser) => {res.render("users/profile-edit"), {details:foundUser}})
-          .catch(err=>{console.log(err)})
-          })
+// router.get("/profile/edit", (req, res, next) => {
+//   User.findById(req.session.user._id)
+//     .then((foundUser) => { res.render("users/profile-edit", foundUser) })
+//     .catch(err => { console.log(err) })
+// })
 
+
+router.get("/profile/edit", (req, res, next) => {
+  User.findById(req.session.user._id)
+    .then((foundUser) => { res.render("users/profile-edit", {...foundUser, foundUser: foundUser.userCountry}) })
+    .catch(err => { console.log(err) })
+})
 
 
 router.post("/profile/edit", (req,res,next) => {
@@ -38,6 +44,10 @@ firstName: req.body.firstName,
 lastName: req.body.lastName,
 userCountry: req.body.userCountry,
 };
+
+
+
+
 User.findByIdAndUpdate(req.session.user._id, userDetails)
 .then(() => { return res.redirect(`/user/profile`) })
 .catch(err => console.log(err))

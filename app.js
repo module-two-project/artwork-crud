@@ -24,6 +24,14 @@ const projectName = "Artwork Gallery";
 
 app.locals.appTitle = `${capitalized(projectName)} created by Marc & Saskia`;
 
+
+hbs.registerHelper('select', function(selected, options) {
+    return options.fn(this).replace(
+        new RegExp(' value=\"' + selected + '\"'),
+        '$& selected="selected"');
+});
+
+
 app.use((req,res,next) => {
     res.locals.userInSession = req.session.user
     next()

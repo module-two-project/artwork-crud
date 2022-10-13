@@ -9,10 +9,25 @@
                     <input type="text" class="form-control" name="firstName" value="{{firstName}}">
 
                     <label for="" class="form-label">Last Name: </label>
-                    <input type="text" class="form-control" name="lastName">
+                    <input type="text" class="form-control" name="lastName" value="{{lastName}}">
 
-                    <label for="" class="form-label">Country: </label>
+                    {{!-- <label for="" class="form-label"> TEST TASK STATUS: </label>  
+                    <select>
+                        {{#select status}}
+                        <option value="Completed">Completed</option>
+                        <option value="OverDue">OverDue</option>
+                        <option value="SentToPayer">SentToPayer</option>
+                        <option value="None">None</option>
+                        {{/select}}
+                    </select><br /><br /> --}}
+
+
+
+{{#select foundUser}}
+
+                    <label for="" class="form-label"> Country: </label>
                     <select class="form-control" name="userCountry" for="userForm">
+                
                         <option>select country</option>
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Åland Islands">Ålan Islands</option>
@@ -263,6 +278,7 @@
                         <option value="Yemen">Yemen</option>
                         <option value="Zambia">Zambia</option>
                         <option value="Zimbabwe">Zimbabwe</option>
+                       {{/select}}<br /><br />
                     </select>
 
                     <button onclick="myFunction()" type="submit" class="btn btn-primary create-button "> Save my info
@@ -272,6 +288,7 @@
                             alert("Changes Saved");
                         }
                     </script>
+                     
                 </form>
         </div>
     </div>
