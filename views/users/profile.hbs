@@ -27,9 +27,17 @@
 
 
 </div>
-<div class="user-favourites-div"> My Favourite Piece Of Art:
+
+
+<div class="user-favourites-div"> 
+   <h3 class="user-favourites-heading"> My Favourite Pieces Of Art: </h3>
+
+
     <p> {{favoriteArt.0.title}}</p>
-<img class="favourite-art" src="{{favouriteArt.0.artworkPictureUrl}}" height="250px" width="auto" border-radius:"15px">
+
+    {{#each favouriteArt}}
+<img class="favourite-art" src="{{this.artworkPictureUrl}}" height="250px" width="auto" border-radius:"15px">
+{{/each}}
 </div>
 
 </div>

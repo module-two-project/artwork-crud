@@ -244,6 +244,19 @@ h5{
 
 .favourite-art{
   border-radius: 15px;
+  margin: 10px 10px;
+}
+
+.user-favourites-div{
+  max-width: 800px;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.user-favourites-heading{
+  width: 800px;
+  text-align: center;
+
 }
 
 .error-message{

@@ -122,7 +122,8 @@ router.post("/artwork/:artworkId/favourite", isLoggedIn, (req,res, next)=> {
     Artwork.findById(req.params.artworkId)
     .then((artworkFromDB) => {
        User.findOneAndUpdate({username: req.session.user.username}, {$push: {favouriteArt:artworkFromDB}})
-       .then(()=> {res.redirect("/user/profile")
+       .then((result)=> {res.redirect("/user/profile")
+       console.log(result)
 })
             })
             .catch(err => {
