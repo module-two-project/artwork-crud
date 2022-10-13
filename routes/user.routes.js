@@ -24,8 +24,11 @@ router.get("/user/profile", isLoggedIn, (req, res) => {
 
         
 
-router.get("/profile/edit", (req,res,next) =>
-res.render("users/profile-edit"))
+        router.get("/profile/edit", (req,res,next) => {
+          User.findById(req.session.user._id)
+          .then((foundUser) => {res.render("users/profile-edit"), {details:foundUser}})
+          .catch(err=>{console.log(err)})
+          })
 
 
 
