@@ -2,59 +2,39 @@
   <div class="artwork-details-text">
     <h2>{{title}}</h2>
 
-    <p>
-      <strong>Artist:</strong>
-      {{artist}}
-    </p>
+    <p><strong>Artist:</strong>{{artist}}</p>
 
     <p><strong>Date: </strong> {{date}} </p>
 
-    <p><strong>Description:</strong>
-      {{description}}</p>
+    <p><strong>Description:</strong>{{description}}</p>
 
-    <p><strong>Added By:</strong>
-      {{this.user}}</p>
+    <p><strong>Added By:</strong>{{this.user}}</p>
 
-      {{#if userInSession}}
+    {{#if userInSession}}
 
-    <a href="/artwork/{{_id}}/update" class="btn btn-primary">
-      Update This Artwork</a>
+    <a href="/artwork/{{_id}}/update" class="btn btn-primary"> Update This Artwork</a>
 
     <form action="/artwork/{{_id}}/delete" method="POST">
       <button onclick="myFunction()" type="submit" class="btn btn-primary">Delete This Artwork</button>
     </form>
 
+    <form action="/artwork/{{_id}}/favourite" method="POST">
+      <button name="favourite" type="submit" class="btn btn-primary create-button col-lg-8">Show This On My Profile</button>
+    </form>
 
+    <form method="POST" action="/artwork/{{_id}}/remove">
+      <button name="remove" class="btn btn-primary" type="submit">Remove From My Profile</button>
+    </form>
 
-<form action="/artwork/{{_id}}/favourite" method="POST">
-    <button name="favourite" type="submit" class="btn btn-primary create-button col-lg-8">Show This On My Profile</button>
-</form>
-
-<form method="POST" action="/artwork/{{_id}}/remove">
-<button name="remove" class="btn btn-primary" type="submit">Remove From My Profile</button>
-</form>
-
-
-
-   {{#if errorMessage}}
-      <p class="error-message"> Error: {{errorMessage}} </p>
-      {{/if}}
-
-
-{{else}}
-<a class="btn btn-primary" href="/artwork"> Go Back </a>
-
-{{/if}}
+    {{#if errorMessage}}
+    <p class="error-message"> Error: {{errorMessage}} </p>
+    {{/if}}
+    {{else}}
+    <a class="btn btn-primary" href="/artwork"> Go Back </a>
+    {{/if}}
   </div>
-
   <div class="artwork-image-details">
-    <img
-      src="{{artworkPictureUrl}}"
-      alt="{{this.title}}"
-      class="artwork-image"
-      height="400px"
-      width="auto"
-    />
+    <img src="{{artworkPictureUrl}}" alt="{{this.title}}" class="artwork-image" height="400px" width="auto" />
   </div>
 
 
