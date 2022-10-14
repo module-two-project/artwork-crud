@@ -1,48 +1,29 @@
-
-
 <h1 style="text-align:center"> welcome to your profile, {{username}}!</h1>
 
 <div class="profile-flex-container">
 
 
-<div class="user-details-div"> 
+  <div class="user-details-div">
 
-<h3 class="user-details-title">User Details </h3>
-
-
-<h5>First Name: {{firstName}}</h5>
-<h5>Last Name: {{lastName}}</h5>
-<h5>Country: {{userCountry}}</h5>
+    <h3 class="user-details-title">User Details </h3>
 
 
+    <h5>First Name: {{firstName}}</h5>
+    <h5>Last Name: {{lastName}}</h5>
+    <h5>Country: {{userCountry}}</h5>
 
+    <a class="btn btn-primary" href="/profile/edit"> Edit My Profile </a>
 
-<a class="btn btn-primary" href="/profile/edit"> Edit My Profile </a>
+  </div>
+  <div class="user-favourites-div">
 
-
-
-
-
-
-
-
-</div>
-
-
-<div class="user-favourites-div"> 
-
-     {{#if favouriteArt}}
-   <h3 class="user-favourites-heading"> My Favourite Pieces Of Art:   </h3> 
-
-
- 
-
+    {{#if favouriteArt}}
+    <h3 class="user-favourites-heading"> My Favourite Pieces Of Art: </h3>
     {{#each favouriteArt}}
-<img class="favourite-art" src="{{this.artworkPictureUrl}}" height="250px" width="auto" border-radius:"15px">
-{{/each}}
+    <img class="favourite-art" src="{{this.artworkPictureUrl}}" height="250px" width="auto" border-radius:"15px">
+    {{/each}}
+    {{/if}}
+    
+  </div>
 
-{{/if}}
 </div>
-
-</div>
-

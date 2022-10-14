@@ -1,27 +1,28 @@
 <div class="full-body-login">
 
 
- {{#if errorMessage}}
- <p class="error-message"> Error: {{errorMessage}} </p> 
+   {{#if errorMessage}}
+   <p class="error-message"> Error: {{errorMessage}} </p>
    {{/if}}
 
-<div class="login-form">
-
-  
-    <h2 class="logsign-title"> Create Account </h2>
-<form action="/auth/signup" method="POST">
-<div class="labels-div">
+   <div class="login-form">
 
 
-   <label> <p>Username</p>
-      <input type="text" name="username">
-   </label>
-   <label> <p>Password</p>
-      <input type="password" name="password" autofocus="autofocus" placeholder="At least 8 characters">
-   </label>
-   <button onclick="myFunction()" type="submit">Sign Up</button>
+      <h2 class="logsign-title"> Create Account </h2>
+      <form action="/auth/signup" method="POST">
+         <div class="labels-div">
+
+
+            <label>
+               <p>Username</p>
+               <input type="text" name="username">
+            </label>
+            <label>
+               <p>Password</p>
+               <input type="password" name="password" autofocus="autofocus" placeholder="At least 8 characters">
+            </label>
+            <button onclick="myFunction()" type="submit">Sign Up</button>
+         </div>
+      </form>
    </div>
-</form>
 </div>
-</div>
-
