@@ -20,9 +20,9 @@ const app = express();
 require("./config")(app);
 
 const capitalized = require("./utils/capitalized");
-const projectName = "Artwork Gallery";
+const projectName = "The Digital Artwork Gallery";
 
-app.locals.appTitle = `${capitalized(projectName)} created by Marc & Saskia`;
+app.locals.appTitle = `The Digital Artwork Gallery`;
 
 
 hbs.registerHelper('select', function(selected, options) {
