@@ -24,9 +24,17 @@
       <button onclick="myFunction()" type="submit" class="btn btn-primary">Delete This Artwork</button>
     </form>
 
+
+
 <form action="/artwork/{{_id}}/favourite" method="POST">
     <button name="favourite" type="submit" class="btn btn-primary create-button col-lg-8">Show This On My Profile</button>
 </form>
+
+<form method="POST" action="/artwork/{{_id}}/remove">
+<button name="remove" class="btn btn-primary" type="submit">Remove From My Profile</button>
+</form>
+
+
 
    {{#if errorMessage}}
       <p class="error-message"> Error: {{errorMessage}} </p>

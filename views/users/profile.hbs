@@ -17,7 +17,7 @@
 
 
 
-<a href="/profile/edit"> Edit My Profile </a>
+<a class="btn btn-primary" href="/profile/edit"> Edit My Profile </a>
 
 
 
@@ -30,14 +30,18 @@
 
 
 <div class="user-favourites-div"> 
-   <h3 class="user-favourites-heading"> My Favourite Pieces Of Art: </h3>
+
+     {{#if favouriteArt}}
+   <h3 class="user-favourites-heading"> My Favourite Pieces Of Art:   </h3> 
 
 
-    <p> {{favoriteArt.0.title}}</p>
+ 
 
     {{#each favouriteArt}}
 <img class="favourite-art" src="{{this.artworkPictureUrl}}" height="250px" width="auto" border-radius:"15px">
 {{/each}}
+
+{{/if}}
 </div>
 
 </div>

@@ -140,6 +140,16 @@ router.post("/artwork/:artworkId/favourite", isLoggedIn, (req,res, next)=> {
         })
 
 
-
+        router.post("/artwork/:artworkId/remove", isLoggedIn, (req,res, next)=> {
+            Artwork.findById(req.params.artworkId)
+            .then(async (artworkFromDB) => {
+                const result = await User.findOneAndUpdate({ username: req.session.user.username }, { $pull: { favouriteArt: req.params.artworkId } });
+                res.redirect("/artwork");
+                console.log(result);
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+                })
 
 module.exports = router;
