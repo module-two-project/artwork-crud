@@ -26,5 +26,5 @@ Finally, to run the script in your local computer, enter the command **npm run d
 
 ## Check the online version
 Take a look at our online art gallery:   
-[Gallery Link](https://artwork-project.herokuapp.com/?)
+[Gallery Link](https://thedigitalartworkgallery.adaptable.app/)
 
